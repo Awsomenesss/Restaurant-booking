@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+/* Global style */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.custom-red {
+    background-color: #BD3C31;
+}
+
+.contact_icons {
+    color: #BD3C31;
+    font-size: 200%;
+}
+
+.fit-width {
+    width: fit-content;
+}
+
+/* Background animation */
+.bg {
+    animation: slide 5s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #272727 50%, #201B1B 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/* Navigation bar */
+
+.active_page {
+    background-color: #BD3C31;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Modify booking details modal */
+.booking_changes {
+    background-color: #212529;
+    color: #fff;
+}
+
+/* Footer */
+
+footer i {
+    font-size: 200%;
+    padding: 3%;
+    color: #BD3C31
+}
+
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-instagram:hover {
+    -ms-transform: scale(1.5);
+    /* IE 9 */
+    -webkit-transform: scale(1.5);
+    /* Safari 3-8 */
+    transform: scale(1.5);
+}
+
+.btn-danger {
+    background-color: #BD3C31;
+}
+
+#red_dragon {
+    width: 35%;
+}
+
+input {
+    padding: 2px;
+    margin-top: 10px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+textarea {
+    margin-top: 10px;
+}
+
+
+/* Media query max width 760px for tablets devices */
+@media screen and (max-width: 768px) {
+    #red_dragon {
+        width: 60%;
+    }
+}
+
+/* Media query max width 480px for small mobile devices */
+@media screen and (max-width: 480px) {
+    #red_dragon {
+        width: 70%;
+    }
+}
+
+/* Media query max width 320px for small mobile devices */
+@media screen and (max-width: 320px) {
+    #red_dragon {
+        width: 80%;
+    }
+}
