@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['restaurant-book.herokuapp.com',
-                 'https://8000-awsomenesss-restaurant-b-lqwr0uo5uu.us2.codeanyapp.com']
+                 '8000-awsomenesss-restaurant-b-lqwr0uo5uu.us2.codeanyapp.com']
 
 
 # Application definition
