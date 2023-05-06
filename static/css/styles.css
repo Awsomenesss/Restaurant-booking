@@ -1,17 +1,67 @@
+/* Global style */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.hero-image {
+    background-size: cover;
+    background-position: center;
+}
+
 body {
-    background-color: #333650;
+    background-image: url(/Images/restaurant-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.food-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
 }
 
-.category {
-    text-align: center;
+.bg3 {
+    animation-duration: 5s;
 }
 
-.item {
-    margin-bottom: 20px;
+
+/* Navigation bar */
+
+.navbar {
+    background-color: #2C2C2C;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #808080;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.navbar-toggler {
+    border: none;
+    color: #808080;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+}
+
+/* Main section */
+
+.main-section {
+    background-image: url();
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
 }

@@ -1,45 +1,24 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block home_active %}active{% endblock %}
+
 {% block content %}
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3">
-            <div class="row">
-                <img class="w-75 mx-auto" id="banner"
-                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="homepage_banner">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <a class="nav-link text-white btn btn-danger mx-auto mt-5 d-block fit-width" href="#">
-                    Book Now
-                </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="w-75 mx-auto mt-2 text-center">
-                    <h3>
-
-                    </h3>
-
-                    <br>
-
-                    <p>something something
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-
-            </div>
-        </div>
+<div class="hero-image" style="background-image: url('/Images/restaurant-hero.jpg')">
+    <div class="hero-text">
+        <h1 style="text-align: center;">Welcome to My Restaurant</h1>
+        <p style="text-align: center;">We serve the best food in town</p>
     </div>
 </div>
 
+<div class="row" id="about">
+    <div class="col-md-12">
+        <h2>About Us</h2>
+        <p>We are a family-owned restaurant that has been serving delicious food for over 20 years. Our menu features a
+            variety of dishes made from fresh, locally-sourced ingredients.</p>
+    </div>
+</div>
 {% endblock %}

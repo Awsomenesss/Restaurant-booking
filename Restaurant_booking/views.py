@@ -44,20 +44,4 @@ class ContactView(TemplateView):
         )
 
 
-class MyBooking(View):
-    model = Booking
-    template_name = "Mybooking.html"
-    context_object_name = 'booking'
 
-    def get(self, request, booking_id, *args, **kwargs):
-        booking = get_object_or_404(Booking, pk=booking_id)
-
-        return render(
-            request,
-            "Mybooking.html",
-            {
-                "booking": booking,
-                "updated": False,
-                "Update_BookingDetails": UpdateBookingDetails(instance=booking)
-            },
-        )
