@@ -25,6 +25,8 @@
 
     <!-- Navigation -->
 
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
@@ -38,47 +40,39 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                     <li class="nav-item px-2">
                         <a class="nav-link {{ home_active }}" href="#">Home</a>
                     </li>
-
                     <li class="nav-item px-2">
                         <a class="nav-link {{ menu_active }}" href="#">Menu</a>
                     </li>
-
                     <li class="nav-item px-2">
                         <a class="nav-link {{ contact_active }}" href="#">Contact</a>
                     </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link {{ online_booking_active }}" href="#">Book Now</a>
-                    </li>
-
                     {% if user.is_authenticated %}
                     <li class="nav-item px-2">
-                        <a class="nav-link {{ edit_profile_active }}" href="#">Edit Profile</a>
+                        <a class="nav-link" href="#">Book Now</a>
                     </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link {{ manage_booking_active }}" href="#">Manage
-                            Bookings</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">My Bookings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        </ul>
                     </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-
                     {% else %}
-
                     <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
-
                     <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-
                     {% endif %}
                 </ul>
             </div>

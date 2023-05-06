@@ -8,7 +8,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = ('status', 'booking_time', 'booking_date')
     readonly_fields = ('booking_id',)
     list_display = ('booking_id', 'user', 'booking_date', 'booking_time', 'guest_count',
-                    'status', 'created_on', 'allergies',)
+                    'status', 'created_on',)
     search_fields = ('booking_id', 'user')
     actions = ['approve_booking']
 

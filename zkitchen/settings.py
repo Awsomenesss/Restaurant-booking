@@ -32,8 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['restaurant-book.herokuapp.com',
-                 '8000-awsomenesss-restaurant-b-lqwr0uo5uu.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-awsomenesss-restaurant-b-lqwr0uo5uu.us2.codeanyapp.com']
 
 
 # Application definition
@@ -51,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'crispy_forms',
     'Restaurant_booking',
 ]
 
@@ -60,6 +60,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

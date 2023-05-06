@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container text-center custom-red mt-5">
+    <div class="row my-3">
+        <div class="col-12">
+            <h2 class="text-decoration-underline">Booking Details</h2>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <h5>Booking Status:</h5>
+        </div>
+        <div class="col-6">
+            <p>
+                {% if booking.status == 1 %}
+                Booking Accepted
+                {% else %}
+                Booking Requested
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <h5>Booking Reference:</h5>
+        </div>
+
+        <div class="col-6">
+            <p>{{ booking.booking_id}}</p>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <h5>Booking Date:</h5>
+        </div>
+
+        <div class="col-6">
+            <p>{{ booking.booking_date }}</p>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <h5>Booking Time:</h5>
+        </div>
+
+        <div class="col-6">
+            <p>{{ booking.booking_time }}</p>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <h5>Guest Count:</h5>
+        </div>
+
+        <div class="col-6">
+            <p>{{ booking.guest_count }}</p>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <h5>Allergy Information:</h5>
+        </div>
+
+        <div class="col-6">
+            <p>{{ booking.get_allergies_display }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center mt-5">
+    <div class="row my-3">
+        <div class="col-12">
+            {% if updated %}
+
+            <div class="alert alert-success" role="alert">
+                Your booking is awaiting approval
+            </div>
+            {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+
+                {{ Update_BookingDetails|crispy }}
+
+                <button type="submit" class="btn custom-red text-white my-3">Submit Changes</button>
+            </form>
+
+
+            {% endif %}
+
+            {% else %}
+
+            {% if user.is_authenticated %}
+
+            <form method="post">
+                {% csrf_token %}
+
+                {{ Update_BookingDetails | crispy }}
+
+                <button type="submit" class="btn custom-red text-white my-3">Submit Changes</button>
+            </form>
+
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

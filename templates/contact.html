@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-12 mx-auto py-5">
+            <div class="contact_icons my-3">
+                <i class="fas fa-phone font-weight-normal"> 070 2230 8453</i>
+            </div>
+
+            <div class="contact_icons my-3">
+                <i class="fas fa-envelope"> help@topchef.co.uk</i>
+            </div>
+
+            <div class="contact_icons my-3">
+                <i class="fas fa-clock"> Tues, Weds, Thurs, Fri, Sat, Sun, 2pm-11pm</i>
+            </div>
+
+            <div class="contact_icons my-3">
+                <i class="fas fa-map-marker-alt"> 13 Doyers St, New York, NY 10013, USA</i>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-12 mx-auto py-5">
+            <form method="POST" action="https://formdump.codeinstitute.net/">
+                <label for="full_name" class="form-label">Full Name</label>
+                <input type="text" class="form-control text_input" name="full_name" id="full_name"
+                    value="{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}" required>
+
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control text_input" name="email_address" id="email"
+                    value="{{ user.email }}" required>
+
+                <label for="message">Your message</label>
+                <textarea class="form-control" name="message" id="message" rows="3" required></textarea>
+
+                <button type="submit" class="btn custom-red text-white mx-auto d-block my-3">
+                    Submit Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 w-75 mx-auto">
+            <iframe class="w-100" height="600"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=13%20Doyers%20St,%20New%20York,%20NY%2010013,%20United%20States+(Top%20Chef)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
