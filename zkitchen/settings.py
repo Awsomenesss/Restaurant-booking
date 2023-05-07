@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-awsomenesss-restaurant-b-lqwr0uo5uu.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['restaurant-book.herokuapp.com']
 
 
 # Application definition
