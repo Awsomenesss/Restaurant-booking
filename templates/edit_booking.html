@@ -72,7 +72,7 @@
         </div>
 
         <div class="col-6">
-            <p>{{ booking.get_allergies_display }}</p>
+            <p>{{ booking.booking_comments}}</p>
         </div>
     </div>
 </div>
@@ -81,26 +81,17 @@
     <div class="row my-3">
         <div class="col-12">
             {% if updated %}
-
+            {% if booking.status == 1 %}
             <div class="alert alert-success" role="alert">
-                Your booking is awaiting approval
+                Your booking has been accepted!
             </div>
-            {% if user.is_authenticated %}
-            <form method="post">
-                {% csrf_token %}
-
-                {{ Update_BookingDetails|crispy }}
-
-                <button type="submit" class="btn custom-red text-white my-3">Submit Changes</button>
-            </form>
-
-
-            {% endif %}
-
             {% else %}
-
+            <div class="alert alert-success" role="alert">
+                Your booking is awaiting approval.
+            </div>
+            {% endif %}
+            {% else %}
             {% if user.is_authenticated %}
-
             <form method="post">
                 {% csrf_token %}
 

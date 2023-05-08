@@ -2,23 +2,61 @@
 
 {% load static %}
 
-{% block title %}Home{% endblock %}
-
-{% block home_active %}active{% endblock %}
-
 {% block content %}
 <div class="hero-image" style="background-image: url('/Images/restaurant-hero.jpg')">
-    <div class="hero-text">
-        <h1 style="text-align: center;">Welcome to My Restaurant</h1>
-        <p style="text-align: center;">We serve the best food in town</p>
+    <div class="hero-text text-center">
+        <h1 style="text-align: center;">Zkitchen</h1>
+        <p style="text-align: center;">Welcome to Zkitchen, where we strive to provide a unique and memorable
+            dining experience for our customers.
+            Our restaurant is committed to using only the freshest ingredients and the highest quality meats and produce
+            in all of
+            our dishes. We pride ourselves on our attention to detail, from the preparation of our meals to the
+            presentation on your
+            plate. Whether you're in the mood for a romantic dinner for two or a family gathering, our warm and
+            welcoming atmosphere
+            is sure to delight. Come and join us for an unforgettable dining experience.</p>
     </div>
 </div>
+<div class="container">
+    <h1 style="text-align: center;">contact us</h1>
+    <p style="text-align: center;">We're always happy to hear from our customers. If you have any questions, comments,
+        or feedback, please don't hesitate
+        to get in touch with us. You can contact us via phone, email, or by filling out the contact form on our website.
+        Our
+        friendly staff is available to assist you with any inquiries about our menu, catering services, private events,
+        or
+        We look forward to hearing from you and serving you soon!"</p>
+    <div class="row">
+        <div class="col-md-4 col-12 text-center">
+            <div class="d-flex flex-column">
+                <div class="contact_icons my-3">
+                    <i class="fas fa-phone-volume"></i> (555) 555-1234</i>
+                </div>
 
-<div class="row" id="about">
-    <div class="col-md-12">
-        <h2>About Us</h2>
-        <p>We are a family-owned restaurant that has been serving delicious food for over 20 years. Our menu features a
-            variety of dishes made from fresh, locally-sourced ingredients.</p>
+                <div class="contact_icons my-3">
+                    <i class="fas fa-envelope-open"></i> Zkitchen@Zkitchen.com</i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-12 mx-auto py-5">
+            <form method="POST" action="https://formdump.codeinstitute.net/">
+                <label for="full_name" class="form-label">Full Name</label>
+                <input type="text" class="form-control text_input" name="full_name" id="full_name"
+                    value="{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}" required>
+
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control text_input" name="email_address" id="email"
+                    value="{{ user.email }}" required>
+
+                <label for="message">Your message</label>
+                <textarea class="form-control" name="message" id="message" rows="3" required></textarea>
+
+                <button type="submit" class="btn bg-dark text-white mx-auto d-block my-3">
+                    Submit Message
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

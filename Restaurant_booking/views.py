@@ -34,19 +34,6 @@ class MenuView(TemplateView):
         )
 
 
-class ContactView(TemplateView):
-    template_name = "contact.html"
-
-    def get(self, request, *args, **kwargs):
-        return render(
-            request,
-            "contact.html",
-            {
-                "contact_active": "custom-red",
-            }
-        )
-
-
 class CreateProfile(View):
     template_name = "create_profile.html"
 
@@ -156,7 +143,7 @@ class OnlineBookingView(View):
 
         online_booking.save()
 
-        return redirect(reverse('manage_booking'))
+        return redirect(reverse('home'))
 
 
 class EditBooking(View):

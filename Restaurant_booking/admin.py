@@ -11,10 +11,13 @@ class BookingAdmin(admin.ModelAdmin):
         'booking_id', 'user', 'booking_date', 'booking_time', 'guest_count',
         'status', 'created_on')
     search_fields = ('booking_id', 'user')
-    actions = ['approve_booking']
+    actions = ['accept_booking']
 
-    def approve_booking(self, queryset):
-        queryset.update(approve_booking=True)
+    def accept_booking(self, request, queryset):
+        queryset.update(status=1)
+        self.message_user(request, "Selected bookings have been accepted.")
+
+    accept_booking.short_description = "Accept selected bookings"
 
 
 @admin.register(UserProfile)

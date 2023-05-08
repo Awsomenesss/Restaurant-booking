@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center text-decoration-underline py-3">Book a table</h2>
+        </div>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="w-75 mx-auto py-5">
+        <form class="row g-3" method="POST">
+            {% csrf_token %}
+
+            <div class="col-12">
+                <label for="full_name">Full Name:</label>
+                <input type="text" class="form-control" id="full_name" name="full_name"
+                    value="{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}" required>
+            </div>
+
+            <div class="col-12">
+                <label for="phone_number">Contact Telephone Number:</label>
+                <input type="number" class="form-control" id="phone_number" name="phone_number"
+                    value="{{ user.userprofile.phone_number }}" minlength="11" maxlength="11" required>
+            </div>
+
+            <div class="col-12">
+                <label for="date">Select a Date:</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+
+            <div class="col-12">
+                <label for="time">Select a time:</label>
+                <input type="time" class="form-control" id="time" name="time" min="14:00" max="23:00" value="14:00"
+                    required>
+            </div>
+
+            <div class="col-12">
+                <label for="guest_count">Number of guests:</label>
+                <input type="number" class="form-control" id="guest_count" name="guest_count" min="1" max="10" required>
+            </div>
+
+            <div class="col-12">
+                <label for="comments">Allergy Information:</label>
+                <input type="text" class="form-control" id="comments" name="comments">
+            </div>
+
+            <div class="col-12 text-center">
+                <button type="submit" class="btn bg-dark text-white mx-auto d-block my-3">Book</button>
+            </div>
+
+        </form>
+
+        {% else %}
+
+        <div class="row my-3">
+            <div class="col-12 text-center">
+                If you are not logged in, please <a href="{% url 'account_signup' %}">signup</a> or <a
+                    href="{% url 'account_login' %}">login</a> first.
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    {% endblock %}
