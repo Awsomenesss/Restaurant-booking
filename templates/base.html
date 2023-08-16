@@ -51,6 +51,7 @@
                     </li>
 
                     {% if user.is_authenticated %}
+
                     <li class="nav-item px-2">
                         <a class="nav-link {{ edit_profile_active }}"
                             href="{% url 'edit_profile' request.user.id %}">Edit Profile</a>
@@ -62,7 +63,15 @@
                     </li>
 
                     <li class="nav-item px-2">
-                        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-in-alt"></i></a>
+                        <a class="nav-link" href="#">
+                            {{ user.username }}
+                        </a>
+                    </li>
+
+                    <li class="nav-item px-2 ml-auto">
+                        <a class="nav-link" href="{% url 'account_logout' %}">sign out
+                            <i class="fas fa-sign-in-alt"></i>
+                        </a>
                     </li>
 
                     {% else %}
