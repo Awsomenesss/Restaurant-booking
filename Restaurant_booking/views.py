@@ -7,6 +7,11 @@ from django.urls import reverse_lazy
 from .models import Booking, UserProfile
 from .forms import UpdateBookingDetails, EditProfileForm
 
+from django.http import HttpResponseForbidden
+from django.shortcuts import get_object_or_404
+from django.http import Http404
+from django.core.exceptions import PermissionDenied
+
 
 class HomeView(TemplateView):
     template_name = "index.html"
@@ -81,26 +86,6 @@ class EditProfile(View):
             },
         )
 
-    def post(self, request, user, *args, **kwargs):
-        profile = UserProfile.objects.get(user=user)
-
-        edit_profile_form = EditProfileForm(request.POST, instance=profile)
-
-        if edit_profile_form.is_valid():
-            profile_updates = edit_profile_form.save()
-        else:
-            edit_profile_form = EditProfileForm(instance=profile)
-
-        return render(
-            request,
-            "edit_profile.html",
-            {
-                "profile": profile,
-                'updated': True,
-                "Edit_ProfileForm": edit_profile_form,
-            },
-        )
-
 
 class ManageBooking(generic.ListView):
     model = Booking
@@ -146,7 +131,23 @@ class OnlineBookingView(View):
         return redirect(reverse('home'))
 
 
-class EditBooking(View):
+class UserOwnsBookingMixin:
+    def user_owns_booking(self, booking_id):
+        booking = get_object_or_404(Booking, pk=booking_id)
+        if self.request.user == booking.user:
+            return booking
+        else:
+            raise Http404(
+                "Booking does not exist or you do not have permission to access it.")
+
+    def dispatch(self, request, *args, **kwargs):
+        booking_id = kwargs.get('booking_id')
+        booking = self.user_owns_booking(booking_id)
+        self.booking = booking
+        return super().dispatch(request, *args, **kwargs)
+
+
+class EditBooking(UserOwnsBookingMixin, View):
     model = Booking
     template_name = "edit_booking.html"
     context_object_name = 'edit_booking'
@@ -166,6 +167,11 @@ class EditBooking(View):
 
     def post(self, request, booking_id, *args, **kwargs):
         booking = get_object_or_404(Booking, pk=booking_id)
+
+        # Check if the logged-in user owns the booking
+        if request.user != booking.user:
+            raise PermissionDenied(
+                "You do not have permission to edit this booking.")
 
         booking_details_form = UpdateBookingDetails(
             request.POST, instance=booking)
