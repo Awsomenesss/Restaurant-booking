@@ -40,10 +40,10 @@
         </div>
 
         <div class="col-md-5 col-12 mx-auto py-5">
-            <form method="POST" action="https://formdump.codeinstitute.net/">
+            <form method="POST" action="https://formdump.codeinstitute.net/" onsubmit="return submitForm();">
                 <label for="full_name" class="form-label">Full Name</label>
                 <input type="text" class="form-control text_input" name="full_name" id="full_name"
-                    value="{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}" required>
+                    value="{{ user.userprofile.last_name }} {{ user.userprofile.first_name }}" required>
 
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control text_input" name="email_address" id="email"
