@@ -12,7 +12,7 @@
     </div>
 
     {% if user.is_authenticated and booking.user == user %}
-    <!-- Display the booking details or editing form here -->
+
     <div class="row my-3">
         <div class="col-6">
             <h5>Booking Status:</h5>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="col-6">
-            <p>{{ booking.booking_comments}}</p>
+            <p class="comment-height">{{ booking.booking_comments}}</p>
         </div>
     </div>
     {% endif %}

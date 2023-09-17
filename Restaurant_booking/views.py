@@ -1,16 +1,13 @@
+from django.views import View
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-# Import Django generic libary
-from django.views import generic, View
 from django.views.generic import TemplateView, DeleteView
 from django.urls import reverse_lazy
-# Import Booking model from models
 from .models import Booking, UserProfile
-from .forms import UpdateBookingDetails, EditProfileForm
-
-from django.http import HttpResponseForbidden
-from django.shortcuts import get_object_or_404
+from .forms import UpdateBookingDetails, EditProfileForm, EditUserForm
+from django.contrib import messages
 from django.http import Http404
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class HomeView(TemplateView):
@@ -21,7 +18,7 @@ class HomeView(TemplateView):
             request,
             "index.html",
             {
-                "home_active": "custom-red",
+                "home_active": "",
             }
         )
 
@@ -34,70 +31,69 @@ class MenuView(TemplateView):
             request,
             "menu.html",
             {
-                "menu_active": "custom-red",
+                "menu_active": "",
             }
         )
 
 
-class CreateProfile(View):
-    template_name = "create_profile.html"
+class ProfileView(View):
+    template_name = "profile.html"
 
     def get(self, request, *args, **kwargs):
+        user_profile, created = UserProfile.objects.get_or_create(
+            user=request.user)
+        form = EditProfileForm(instance=user_profile)
+        user_form = EditUserForm(instance=request.user)
+        user_form.fields.pop('password')
         return render(
             request,
-            "create_profile.html",
-        )
-
-    def post(self, request):
-        f_name = request.POST.get("f_name")
-        l_name = request.POST.get("l_name")
-        tele = request.POST.get("phone_number")
-
-        CreateUserProfile = UserProfile.objects.create(
-            first_name=f_name,
-            last_name=l_name,
-            phone_number=tele,
-            user=request.user,
-        )
-
-        CreateUserProfile.save()
-
-        return redirect(reverse('home'))
-
-
-class EditProfile(View):
-    model = UserProfile
-    template_name = "edit_profile.html"
-    context_object_name = 'edit_profile'
-
-    def get(self, request, user, *args, **kwargs):
-        profile = UserProfile.objects.filter(user=user).first()
-        if profile is None:
-            return redirect(reverse('create_profile'))
-
-        return render(
-            request,
-            "edit_profile.html",
+            self.template_name,
             {
-                "profile": profile,
+                "profile": user_profile,
+                "EditProfileForm": form,
+                "EditUserForm": user_form,
                 "updated": False,
-                "Edit_ProfileForm": EditProfileForm,
-                "edit_profile_active": "custom-red",
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+        user_profile, created = UserProfile.objects.get_or_create(
+            user=request.user)
+        form = EditProfileForm(request.POST, instance=user_profile)
+        user_form = EditUserForm(request.POST, instance=request.user)
+
+        if form.is_valid() and user_form.is_valid():
+            form.save()
+            user_form.save()
+            messages.success(request, "Profile updated successfully.")
+            return redirect('profile')
+        else:
+            messages.error(
+                request, "Profile update failed. Please check the form for errors.")
+
+        return render(
+            request,
+            self.template_name,
+            {
+                "profile": user_profile,
+                "EditProfileForm": form,
+                "EditUserForm": user_form,
+                "updated": False,
             },
         )
 
 
-class ManageBooking(generic.ListView):
-    model = Booking
-    queryset = Booking.objects.all()
+class ManageBooking(LoginRequiredMixin, TemplateView):
     template_name = "manage_booking.html"
     paginate_by = 6
-    extra_context = {
-        "manage_booking_active": "custom-red"
-    }
 
     def get_queryset(self):
         return Booking.objects.filter(user_id=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['booking_list'] = self.get_queryset()
+        return context
 
 
 class OnlineBookingView(View):
@@ -107,9 +103,6 @@ class OnlineBookingView(View):
         return render(
             request,
             "online_booking.html",
-            {
-                "online_booking_active": "custom-red",
-            }
         )
 
     def post(self, request):
@@ -128,7 +121,7 @@ class OnlineBookingView(View):
 
         online_booking.save()
 
-        return redirect(reverse('home'))
+        return redirect(reverse('manage_booking'))
 
 
 class UserOwnsBookingMixin:
@@ -148,7 +141,6 @@ class UserOwnsBookingMixin:
 
 
 class EditBooking(UserOwnsBookingMixin, View):
-    model = Booking
     template_name = "edit_booking.html"
     context_object_name = 'edit_booking'
 
@@ -168,7 +160,6 @@ class EditBooking(UserOwnsBookingMixin, View):
     def post(self, request, booking_id, *args, **kwargs):
         booking = get_object_or_404(Booking, pk=booking_id)
 
-        # Check if the logged-in user owns the booking
         if request.user != booking.user:
             raise PermissionDenied(
                 "You do not have permission to edit this booking.")
@@ -179,6 +170,7 @@ class EditBooking(UserOwnsBookingMixin, View):
         if booking_details_form.is_valid():
             booking.status = 0
             booking_updates = booking_details_form.save()
+            return redirect(reverse('manage_booking'))
         else:
             booking_details_form = UpdateBookingDetails(instance=booking)
 

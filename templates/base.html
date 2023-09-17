@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -53,18 +53,13 @@
                     {% if user.is_authenticated %}
 
                     <li class="nav-item px-2">
-                        <a class="nav-link {{ edit_profile_active }}"
-                            href="{% url 'edit_profile' request.user.id %}">Edit Profile</a>
-                    </li>
-
-                    <li class="nav-item px-2">
                         <a class="nav-link {{ manage_booking_active }}" href="{% url 'manage_booking' %}">Manage
                             Bookings</a>
                     </li>
 
                     <li class="nav-item px-2">
-                        <a class="nav-link" href="#">
-                            {{ user.username }}
+                        <a class="nav-link" href="{% url 'profile' %}">
+                            <i class="fas fa-user"></i> {{ user.username }}
                         </a>
                     </li>
 
