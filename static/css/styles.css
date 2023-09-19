@@ -8,13 +8,13 @@
 }
 
 body {
-    background-color: #ffffff;
-    color: #0000FF;
+    background-color: #f5f4f4;
+    color: #000000;
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .comment-height {
     font-size: 14px;
-    max-height: 50px;
+    max-height: 30px;
     overflow-y: auto;
 }
