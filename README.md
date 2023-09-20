@@ -105,3 +105,9 @@ class UserProfile(models.Model):
     def __str__(self):
         return str(self.user)
 ```
+<a name="skeleton"></a>
+## 1.3. Skeleton
+
+[Go to the top](#table-of-contents)
+
+### Wire-frames
