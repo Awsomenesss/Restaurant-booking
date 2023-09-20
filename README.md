@@ -7,4 +7,4 @@ This project focuses on the use of CRUD functionality (Create, Read, Update, Del
 
 A live website can be found [here](https://restaurant-book.herokuapp.com/).
 
-![website preview](documentation_assets/images/preview.PNG)
+![website preview](Restaurant-booking/documentation_assets/preview.PNG)
