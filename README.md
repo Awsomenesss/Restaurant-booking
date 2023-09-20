@@ -131,6 +131,6 @@ The color scheme chosen is #f5f4f4 light gray color and #000000 pure black. This
 - The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
 - If the user is not logged in the navigation bar will look like this:
 - ![user_not_logged_in](documentation_assets/navbar_not_logged_in.PNG)
-![user_logged_in]()
+![user_logged_in](documentation_assets/navbar_logged_in.PNG)
 - The footer is placed at the bottom of each page with social media icons. When hovering over them it creates a zoom effect giving the user more of an experience. These icons will open the links in a new tab.
 
