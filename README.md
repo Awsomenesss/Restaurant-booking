@@ -11,3 +11,62 @@ A live website can be found [here](https://restaurant-book.herokuapp.com/).
 
 ![Below is responsiveness test using responsive-checker for iPhone SE and iPad Pro 11](documentation_assets/preview2.PNG)
 
+# Table of Contents
+
+-   [1. UX](#ux)
+    -   [1.1. Strategy](#strategy)
+        -   [Project Goals](#project-goals)
+            -   [User Goals:](#user-goals)
+            -   [User Expectations:](#user-expectations)
+            -   [Trends of Modern Websites](#trends-of-modern-websites)
+            -   [Strategy Table](#strategy-table)
+    -   [1.2. Structure](#structure)
+    -   [1.3. Skeleton](#skeleton)
+    -   [1.4. Surface](#surface)
+-   [2. Features](#features)
+-   [3. Technologies Used](#technologies-used)
+-   [4. Testing](#testing)
+-   [5. Development Cycle](#development-cycle)
+-   [6. Deployment](#deployment)
+-   [7. End Product](#end-product)
+-   [8. Known Bugs](#known-bugs)
+-   [9. Credits](#credits)
+
+<a name="ux"></a>
+# 1. UX
+The design emphasizes simplicity, efficiency, and accessibility for users. This includes easy table reservations, booking modifications, and cancellations. Users can create profiles update and delete effortlessly. For now, it is designed to demonstrate user-friendliness, user-centricity, and value delivery, with ongoing plans to enhance the overall user experience.
+
+[Go to the top](#table-of-contents)
+
+<a name="strategy"></a>
+## 1.1. Strategy
+
+[Go to the top](#table-of-contents)
+
+### Project Goals
+The main goal of this project is to allow the user to sign up, sign in/out, create/update a user profile and create/update/delete a table booking in a simple and effective process.
+
+### User Goals:
+First Time Visitor Goals
+-   As a first-time visitor, I want to book a table at my chosen date and time.
+-   As a first-time visitor, I want to view the menu for the restaurant, so that I can see the book a table or not.
+-   As a first-time visitor, I want to get the contact details of the restaurant with ease.
+
+Returning Visitor Goals
+-   As a Returning Visitor, I want to update my booking details.
+-   As a Returning Visitor, I want to cancel a booking I have already made.
+-   As a Returning Visitor, I want to edit my profile details for future bookings.
+
+Frequent User Goals
+-   As a Frequent User, I want to check to see if there are any new food items on the menu.
+
+### User Expectations:
+The system should have a simple user interface, with the navigation to each section clear and concise.
+
+-   The menu is clear to read.
+-   The user interface is easy to navigate.
+-   The website is responsive on all devices.
+-   To have the ability to contact the restaurant for any inquiries.
+
+### User Stories
+During the project, I used the GitHub Projects board as my project management tool.
