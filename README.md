@@ -111,8 +111,6 @@ class UserProfile(models.Model):
 [Go to the top](#table-of-contents)
 
 ### wire-frames
-Booking page 
-![booking_page](documentation_assets/bookingpage.PNG)
-Edit profile page 
-![Edit profile_page](documentation_assets/editprofile.PNG)
+![booking_page](documentation_assets/bookingpage.PNG) Booking page 
+![Edit profile_page](documentation_assets/editprofile.PNG) Edit profile page 
 
