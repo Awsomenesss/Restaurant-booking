@@ -7,7 +7,7 @@ This project focuses on the use of CRUD functionality (Create, Read, Update, Del
 
 A live website can be found [here](https://restaurant-book.herokuapp.com/).
 
-![website preview](documentation_assets/preview.PNG)
+![website preview on disktop](documentation_assets/preview.PNG)
 
-Below responsiveness test using responsive-checker 
+![Below responsiveness test using responsive-checker for iPhone SE and iPad Pro 11](documentation_assets/preview responsiveness.PNG)
 
