@@ -110,7 +110,7 @@ class UserProfile(models.Model):
 
 [Go to the top](#table-of-contents)
 
-###wire-frames
+### wire-frames
 Booking page 
 ![online_booking_page_desktop](documentation_assets/bookingpage.PNG)
 
