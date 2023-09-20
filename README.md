@@ -112,5 +112,7 @@ class UserProfile(models.Model):
 
 ### wire-frames
 Booking page 
-![online_booking_page_desktop](documentation_assets/bookingpage.PNG)
+![booking_page](documentation_assets/bookingpage.PNG)
+Edit profile page 
+![Edit profile_page](documentation_assets/bookingpage.PNG)
 
