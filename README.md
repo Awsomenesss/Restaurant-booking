@@ -122,9 +122,8 @@ class UserProfile(models.Model):
 # 2. Features
 
 ### Typography
-    The font chosen was 'Montserrat' and I decided to use the standard 'sans-serif' font falls back to sans-serif if the 'Montserratd' font can't be loaded.
-
-    * 'Montserrat' was chosen primarily to give a clear and familiar feeling to the website.
+The font chosen was 'Montserrat' and I decided to use the standard 'sans-serif' font falls back to sans-serif if the 'Montserratd' font can't be loaded.
+* 'Montserrat' was chosen primarily to give a clear and familiar feeling to the website.
 
  * ### Colour Scheme
       The color scheme chosen is #f5f4f4 light gray color and #000000 pure black. This color scheme gives a minimalistic feeling to the website.<br /><br />
