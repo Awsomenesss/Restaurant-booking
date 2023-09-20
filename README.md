@@ -13,13 +13,11 @@ A live website can be found [here](https://restaurant-book.herokuapp.com/).
 
 # Table of Contents
 
--   [1. UX](#ux)
-    -   [1.1. Strategy](#strategy)
-        -   [Project Goals](#project-goals)
-            -   [User Goals:](#user-goals)
-    -   [1.2. Structure](#structure)
-    -   [1.3. Skeleton](#skeleton)
-    -   [1.4. Surface](#surface)
+  1 [UX](#ux)
+     *[Strategy](#strategy)
+      *[Project Goals](#project-goals)
+      *[User Goals:](#user-goals)
+      *[Structure](#structure)
 -   [2. Features](#features)
 -   [3. Technologies Used](#technologies-used)
 -   [4. Testing](#testing)
@@ -36,7 +34,7 @@ The design emphasizes simplicity, efficiency, and accessibility for users. This 
 [Go to the top](#table-of-contents)
 
 <a name="strategy"></a>
-## 1.1. Strategy
+## Strategy
 
 [Go to the top](#table-of-contents)
 
@@ -69,7 +67,13 @@ The system should have a simple user interface, with the navigation to each sect
 During the project, I used the GitHub Projects board as my project management tool.
 ![user_story_board](documentation_assets/usestory.PNG)
 
-## 1.2. Structure
+##  Structure
+-  Main Website
+    * Home, Menu, Book Now, manage booking and profile.
+    * Visually appealing, minimalistic and welcoming design.
+    * All bookings are easily manageable for the user in the 'manage booking' page.
+-  Admin dashboard
+     * is a Django admin page now where site owner approves books awaiting approval. 
 
 [Go to the top](#table-of-contents)
 
@@ -106,7 +110,7 @@ class UserProfile(models.Model):
         return str(self.user)
 ```
 <a name="skeleton"></a>
-## 1.3. Skeleton
+## Skeleton
 
 [Go to the top](#table-of-contents)
 
