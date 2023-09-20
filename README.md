@@ -9,5 +9,5 @@ A live website can be found [here](https://restaurant-book.herokuapp.com/).
 
 ![website preview on disktop](documentation_assets/preview.PNG)
 
-![Below responsiveness test using responsive-checker for iPhone SE and iPad Pro 11](documentation_assets/preview responsiveness.PNG)
+![Below is responsiveness test using responsive-checker for iPhone SE and iPad Pro 11] (documentation_assets/preview responsiveness.PNG).
 
