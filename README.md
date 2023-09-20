@@ -70,3 +70,5 @@ The system should have a simple user interface, with the navigation to each sect
 
 ### User Stories
 During the project, I used the GitHub Projects board as my project management tool.
+![user_story_board](documentation_assets/usestory.PNG)
+
