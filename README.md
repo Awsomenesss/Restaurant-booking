@@ -133,5 +133,5 @@ The color scheme chosen is #f5f4f4 light gray color and #000000 pure black. This
 - ![user_not_logged_in](documentation_assets/navbar_not_logged_in.PNG)
 - If the user is logged in the navigation bar will look like this:
 - ![user_logged_in](documentation_assets/navbar_logged_in.PNG)
-- The footer is placed at the bottom of each page with social media icons. When hovering over them it creates a zoom effect giving the user more of an experience. These icons will open the links in a new tab.
+- The footer is placed at the bottom of each page with copyright 2023. When hovering over them it creates a brighter effect giving the user more of an experience. These icons will open the links in a new tab.
 
