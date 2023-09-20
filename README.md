@@ -130,6 +130,6 @@ The color scheme chosen is #f5f4f4 light gray color and #000000 pure black. This
 ### All Pages
 - The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
 - If the user is not logged in the navigation bar will look like this:
-- ![user_not_logged_in](documentation_assets/images/navbar_not_logged_in.png)
+- ![user_not_logged_in](documentation_assets/navbar_not_logged_in.PNG)
 
 
