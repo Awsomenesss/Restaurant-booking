@@ -114,5 +114,5 @@ class UserProfile(models.Model):
 Booking page 
 ![booking_page](documentation_assets/bookingpage.PNG)
 Edit profile page 
-![Edit profile_page](documentation_assets/bookingpage.PNG)
+![Edit profile_page](documentation_assets/editprofile.PNG)
 
