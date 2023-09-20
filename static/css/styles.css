@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /* Global style */
 * {
@@ -10,7 +10,7 @@
 body {
     background-color: #f5f4f4;
     color: #000000;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .comment-height {
