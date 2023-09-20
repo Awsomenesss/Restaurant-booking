@@ -17,9 +17,6 @@ A live website can be found [here](https://restaurant-book.herokuapp.com/).
     -   [1.1. Strategy](#strategy)
         -   [Project Goals](#project-goals)
             -   [User Goals:](#user-goals)
-            -   [User Expectations:](#user-expectations)
-            -   [Trends of Modern Websites](#trends-of-modern-websites)
-            -   [Strategy Table](#strategy-table)
     -   [1.2. Structure](#structure)
     -   [1.3. Skeleton](#skeleton)
     -   [1.4. Surface](#surface)
@@ -72,3 +69,39 @@ The system should have a simple user interface, with the navigation to each sect
 During the project, I used the GitHub Projects board as my project management tool.
 ![user_story_board](documentation_assets/usestory.PNG)
 
+## 1.2. Structure
+
+[Go to the top](#table-of-contents)
+
+- Responsiveness across all device sizes.
+- Intuitive navigation facilitated by clearly labeled buttons.
+### Database Model
+database structure:
+
+```python
+class Booking(models.Model):
+    booking_id = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_bookings")
+    booking_date = models.DateField(auto_now=False)
+    booking_time = models.TimeField(auto_now=False)
+    booking_comments = models.TextField(max_length=200, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    guest_count = models.IntegerField()
+    status = models.IntegerField(choices=STATUS, default=0)
+
+    class Meta:
+        ordering = ['-booking_date']
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, primary_key=True)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    phone_number = models.CharField(max_length=11)
+
+    def __str__(self):
+        return str(self.user)
+```
