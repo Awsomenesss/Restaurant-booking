@@ -112,5 +112,5 @@ class UserProfile(models.Model):
 
 ###wire-frames
 Booking page 
-![online_booking_page_desktop](documentation_assets/bookingpage.png)
+![online_booking_page_desktop](documentation_assets/bookingpage.PNG)
 
