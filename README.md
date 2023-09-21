@@ -231,9 +231,8 @@ The user will then need to select a date, time, number of guests and enter any a
 
       ```
 
-    ![Automated Tests Image](static/images/readme-images/automated-tests-image.png)
+    ![Automated Tests Image]()
 
-    ![Coverage Report Image](static/images/readme-images/coverage-report-image.png)
 
 
 * ## Manual Testing
