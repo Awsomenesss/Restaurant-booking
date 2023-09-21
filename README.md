@@ -22,10 +22,8 @@ A live website can be found [here](https://restaurant-book.herokuapp.com/).
 -   [3. Technologies Used](#technologies-used)
 -   [4. Testing](#testing)
 -   [5. Development Cycle](#development-cycle)
--   [6. Deployment](#deployment)
--   [7. End Product](#end-product)
--   [8. Known Bugs](#known-bugs)
--   [9. Credits](#credits)
+-   [6. Known Bugs](#known-bugs)
+-   [7. Credits](#credits)
 
 <a name="ux"></a>
 # 1. UX
@@ -188,10 +186,6 @@ The user will then need to select a date, time, number of guests and enter any a
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML)
     -   The project uses HyperText Markup Language.
--   [CSS3](https://en.wikipedia.org/wiki/CSS)
-    -   The project uses Cascading Style Sheets.
--   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-    -   The project uses JavaScript.
 -   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
     -   The project uses Python.
 -   [Boostrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
@@ -332,7 +326,7 @@ In addition to the other tests, I have conducted a manual checklist for myself t
 <a name="deployment"></a>
 
 
-# 8. Known Bugs
+# 6. Known Bugs
 
 [Go to the top](#table-of-contents)
 
@@ -342,5 +336,8 @@ In addition to the other tests, I have conducted a manual checklist for myself t
 
 <a name="credits"></a>
       
-  
+# 7.Acknowledgments
+The site was completed as a part of a Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/) and is my Portfolio Project 4. I would like to thank all at the Code Institute for their help and support.
+
+<a name="credits"></a>
   
