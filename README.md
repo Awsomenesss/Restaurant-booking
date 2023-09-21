@@ -201,7 +201,7 @@ The user will then need to select a date, time, number of guests and enter any a
 -   [codeanywhere](https://app.codeanywhere.com/)
     -   The project uses codeanywhere.
 -   [Google Fonts](https://fonts.google.com/)
-    -   Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
+    -   Google fonts were used to import the "Montserrat" font into the style.css file which is used on all pages throughout the project.
 -   [GitHub](https://github.com/)
     -   GitHub was used to store the project's code after being pushed from Git.
  
@@ -213,48 +213,23 @@ The user will then need to select a date, time, number of guests and enter any a
 
 * ## Code Validation
 
-* Cafe Manbo has been validated by using online validation tools [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint JavaScript Validator](https://jshint.com/) and the [PEP8 Online Validator](http://pep8online.com/).
-
-* ### HTML Validation Image
-
-    ![HTML Validation](static/images/readme-images/html-validation-image.png)
-
-* ### CSS Validation Image
-
-    ![CSS Validation](static/images/readme-images/css-validation-image.png)
-
-* ### JSHint map.js Image
-
-    ![JavaScript Validation](static/images/readme-images/jshint-map-js-image.png)
-
-    * The JavaScript code for map.js was taken from the Code Institute Resume Project which shows students how to integrate google maps on a website.
-
-* ### JSHint nav.js Image
-
-    ![JavaScript Validation](static/images/readme-images/jshint-nav-js-image.png)
-
-* ### PEP8 Validation Image (accounts/apps.py)
-
-    <details><summary><b>PEP8 Validation Image</b></summary>
-
-    ![PEP8 Validation (accounts/apps.py)](static/images/readme-images/pep8-accounts-apps.png)
+* The project has been validated by using online validation tools [W3C HTML Validator](https://validator.w3.org/)passes with few warnings,  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint JavaScript Validator](https://jshint.com/) there is only one js function 
 
 
 * ## Responsiveness Testing
     * I conducted responsive tests manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
 
-* ## Compressing Images
-    * All images that are displayed within the website have been compressed with [Compressor](https://compressor.io/) and I managed to save a total of 12.82 MB.<br /><br />
-
-    ![Compressed Image 1](static/images/readme-images/compressed-image-1.png)
-
-    ![Compressed Image 2](static/images/readme-images/compressed-image-2.png)
 
 * ## Automated Testing
-    * During this project I have found the benefit of automated testing to be extremely beneficial. Automated testing as highlighted many minor discrepancies that would have been missed had it not been highlighted when conducting automated testing.
-
+    * During this project I have used  unit tests for a Django automated testing for my views. simulate HTTP requests, to check for expected behavior of my views application.
+    * The tests check the behavior of of all the views to return HTTP status code of 200 (OK) except for the UserOwnsBookingMixin where users were able to access their own bookings 
+      but passes during manual testing
     * To run the automated tests, type the command - ```python manage.py test```
+ 
+      ```python
+
+      ```
 
     ![Automated Tests Image](static/images/readme-images/automated-tests-image.png)
 
@@ -262,12 +237,12 @@ The user will then need to select a date, time, number of guests and enter any a
 
 
 * ## Manual Testing
-In addition to the other tests, I have conducted a manual check list for myself to carry out to make sure that everything is working as intended.
+In addition to the other tests, I have conducted a manual checklist for myself to carry out to make sure that everything is working as intended.
 
 
 | Status | **Main Website - User Logged Out**
 |:-------:|:--------|
-| &check; | Clicking the nav logo loads the home page
+| &check; | Clicking the  loads the home page
 | &check; | The nav bar is transparent on load and then the background turns dark upon scrolling 50px
 | &check; | The nav bar returns back to transparent when the user scrolls back to the top of the page
 | &check; | Clicking the Home button on the nav bar loads the home page
