@@ -241,12 +241,7 @@ The user will then need to select a date, time, number of guests and enter any a
 
 
 * ## Responsiveness Testing
-    * I conducted responsive tests manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br /><br />
-
-    ![Responsive Test Sheet](static/images/readme-images/responsive-check-image.png)
-
-
-    ![Responsive Test Sheet](static/images/readme-images/mobile-responsive-check-image.png)
+    * I conducted responsive tests manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
 
 * ## Compressing Images
@@ -258,8 +253,6 @@ The user will then need to select a date, time, number of guests and enter any a
 
 * ## Automated Testing
     * During this project I have found the benefit of automated testing to be extremely beneficial. Automated testing as highlighted many minor discrepancies that would have been missed had it not been highlighted when conducting automated testing.
-
-    * I currently have 34 individual tests which provide 91% coverage as shown in the below image.
 
     * To run the automated tests, type the command - ```python manage.py test```
 
