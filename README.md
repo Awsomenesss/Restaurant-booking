@@ -231,7 +231,7 @@ The user will then need to select a date, time, number of guests and enter any a
 
       ```
 
-    ![Automated Tests Image]()
+    ![Automated Tests Image](documentation_assets/test_run.PNG)
 
 
 
