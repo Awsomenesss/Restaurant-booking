@@ -269,6 +269,78 @@ In addition to the other tests, I have conducted a manual checklist for myself t
         * Microsoft Edge
         * Safari
         <br /><br />
+
+# 5. Development Cycle
+
+[Go to the top](#table-of-contents)
+
+## Project Checklist
+- Install Django and the supporting libraries
+    -  Install Django and Gunicorn. Gunicorn is the server I am using to run Django on Heroku.
+    - Install support libraries including psycopg2, this is used to connect the PostgreSQL database
+    - Install Cloudinary libraries, this is a host provider service that stores images
+    - Create the requirements.txt file. This includes the project's dependencies allowing us to run the project in Heroku.
+
+- Create a new, blank Django Project
+    - Create a new project
+    - Create the app
+    - Add restaurant_booking to the installed apps in settings.py
+    - Migrate all new changes to the database
+    - Run the server to test
+
+- Setup project to use Cloudinary and PostgreSQL
+    - Create new Heroku app
+        - Sign into Heroku
+        - Select New
+        - Select create new app
+        - Enter a relevant app name
+        - Select appropriate region
+        - Select the create app button
+
+    - Attach PostgreSQL database
+        - In Heroku go to resources
+        - Search for Postgres in the add-ons box
+        - Select Heroku Postgres
+        - Submit order form
+
+    - Prepare the environment and settings.py file
+        - Create env.py file
+        - Add DATABASE_URL with the Postgres URL from Heroku
+        - Add SECRET_KEY with a randomly generated key
+        - Add SECRET_KEY and generated key to the config vars in Heroku
+        - Add if statement to settings.py to prevent the production server from erroring
+        - Replace insecure key with the environment variable for the SECRET_KEY
+        - Add Heroku database as the back end
+        - Migrate changes to new database
+
+    - Get static media files stored on Cloudinary
+        - Create a Cloudinary account
+        - From the dashboard, copy the API Environment variable
+        - In the settings.py file create a new environment variable for CLOUDINARY_URL
+        - Add the CLOUDINARY_URL variable to Heroku
+        - Add a temporary config var for DISABLE_COLLECTSTATIC
+        - In settings.py add Cloudinary as an installed app
+        - Add static and media file variables
+        - Add templates directory
+        - Change DIR's key to point to TEMPALTES_DIR
+        - Add Heroku hostname to allowed hosts
+        - Create directories for media, static and templates in the project workspace
+        - Create a Procfile
+
+- Deploy new empty project to Heroku
+
+<a name="deployment"></a>
+
+
+# 8. Known Bugs
+
+[Go to the top](#table-of-contents)
+
+-  There is currently an issue with the `UserOwnsBookingMixin` that prevents it from working as expected in some scenarios. Specifically, when attempting to access a booking that does not exist, the mixin may raise an unexpected error.
+
+- on the edit profile form successfully implemented a validation rule to ensure that users can only input numbers but have not succeded in setting min/max length in phone number input due to django-crispy-forms use.
+
+<a name="credits"></a>
       
   
   
