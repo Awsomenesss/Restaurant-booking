@@ -80,6 +80,8 @@ During the project, I used the GitHub Projects board as my project management to
 ### Database Model
 database structure:
 
+![database_model](documentation_assets/images/database_model.png)
+
 ```python
 class Booking(models.Model):
     booking_id = models.UUIDField(
