@@ -239,37 +239,29 @@ The user will then need to select a date, time, number of guests and enter any a
 In addition to the other tests, I have conducted a manual checklist for myself to carry out to make sure that everything is working as intended.
 
 
-| Status | **Main Website - User Logged Out**
+| Status | **Main Website 
 |:-------:|:--------|
 | &check; | Clicking the  loads the home page
-| &check; | The nav bar is transparent on load and then the background turns dark upon scrolling 50px
-| &check; | The nav bar returns back to transparent when the user scrolls back to the top of the page
 | &check; | Clicking the Home button on the nav bar loads the home page
-| &check; | Clicking the Our Menu button on the nav bar loads the external menu PDF in a new window
-| &check; | Clicking the Gallery button on the nav bar loads the gallery page
 | &check; | Clicking the Book Now button on the nav bar loads the login page
 | &check; | Clicking the Account button on the nav bar shows the Register and Login dropdowns
-| &check; | Clicking the Register button on the nav bar drop down loads the register page
-| &check; | Clicking the Login button on the nav bar drop down loads the login page
-| &check; | Clicking the Book Now button on the hero section loads login page
-| &check; | 4 Reviews are rendered for the user to see
-| &check; | Clicking the Read More button on the a review card loads the review modal
-| &check; | Clicking the Visit Us button in the Hours & Location section loads the login page
-| &check; | Clicking the cafemanbo@hotmail.co.uk link loads an email application separately
-| &check; | Google Maps is loaded correctly and displays the correct location of Cafe Manbo
-| &check; | Clicking the Home link on the footer loads the home page
-| &check; | Clicking the Our Menu link on the footer loads the external menu PDF in a new window
-| &check; | Clicking the Gallery link on the footer loads the gallery page
-| &check; | Clicking the Book Now link on the footer loads the login page
-| &check; | Clicking the Reservations link on the footer loads the login page
-| &check; | Clicking the Register link the on footer loads the register page
-| &check; | Clicking the Login link the on footer loads the login page
-| &check; | Clicking the Instagram link on the footer loads the Instagram home page in a new window
-| &check; | Clicking the LinkedIn link on the footer loads the LinkedIn home page in a new window
-| &check; | Clicking the Twitter link on the footer loads the Twitter home page in a new window
-| &check; | Clicking the Facebook link on the footer loads the Facebook home page in a new window
-| &check; | Clicking the cafemanbo@hotmail.co.uk link on the footer loads an email application separately
-| &check; | Typing in a incorrect URL will load the 404 error page
+| &check; | Clicking the Register button on the nav bar  loads the register page
+| &check; | The user can register as a user and a profile is created on the register page
+| &check; | Clicking the Login on the nav bar loads the login page
+| &check; | registered user can log in on the login page
+| &check; | Clicking the Book Now on the nav bar loads the login page
+| &check; | The user can create a booking on the Book Now page
+| &check; | Clicking the Manage booking on the nav bar loads the manage booking page
+| &check; | The user can view booking on the Manage booking  page
+| &check; | Clicking the change booking details on the  Manage booking  page loads edit booking page 
+| &check; | The user can view and change booking details on the edit booking page 
+| &check; | Clicking the cancel booking on the  Manage booking  page loads the delete booking page 
+| &check; | Clicking the cancel booking on the delete booking page loads the manage booking page
+| &check; | Clicking the yes on the delete booking page deletes the booking and loads the manage booking page
+| &check; | Clicking the logged-in user account name and icon on the nav bar loads the profile page
+| &check; | Clicking the update profile button after changes in the form profile details are updated 
+| &check; | Clicking the sign out on the nav bar loads sign out page 
+| &check; | sign out page signs out the logged-in user after they click sign out 
 
 * ## Browser Compatibility
     * The website has had manual and responsive tests conducted on the below browsers with additional Lighthouse testing on Google Chrome and Microsoft Edge and I was presented with no issues.
