@@ -122,11 +122,187 @@ class UserProfile(models.Model):
 # 2. Features
 
 ### Typography
-    The font chosen was 'Montserrat' and I decided to use the standard 'sans-serif' font falls back to sans-serif if the 'Montserratd' font can't be loaded.
+The font chosen was 'Montserrat' and I decided to use the standard 'sans-serif' font falls back to sans-serif if the 'Montserratd' font can't be loaded.
+* 'Montserrat' was chosen primarily to give a clear and familiar feeling to the website.
 
-    * 'Montserrat' was chosen primarily to give a clear and familiar feeling to the website.
+### Colour Scheme
+The color scheme chosen is #f5f4f4 light gray color and #000000 pure black. This color scheme gives a minimalistic feeling to the website.
+### All Pages
+- The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
+- If the user is not logged in the navigation bar will look like this:
+- ![user_not_logged_in](documentation_assets/navbar_not_logged_in.PNG)
+- If the user is logged in the navigation bar will look like this:
+- ![user_logged_in](documentation_assets/navbar_logged_in.PNG)
+- The footer is placed at the bottom of each page with copyright 2023. When hovering over them it creates a brighter effect giving the user more of an experience. These icons will open the links in a new tab.
 
- * ### Colour Scheme
-      The color scheme chosen is #f5f4f4 light gray color and #000000 pure black. This color scheme gives a minimalistic feeling to the website.<br /><br />
+### Register Page
+- A simple signup form that requires the user to enter a unique email address and a password. The password must be entered again for confirmation, this must match the already entered password above.
+- A message to prompt the user that if an account is already been created they can click the sign-in hyperlink to be redirected to the sign-in page.
+- If the user enters an email address that has already been registered, the user is prompted by an error message.
+- If the user enters both passwords that do not match, the user is prompted
+
+### Login Page
+- A login form that requires the user to enter the email address and password that they used when signing up to the site.
+- A message to prompt the user that if an account has not been created they can click the signup hyperlink to be redirected to the signup page.
+- If the user enters wrong credentials, a message is displayed to the user.
+
+### Logout Page
+- When clicking logout from the navigation bar, the user is redirected to a sign-out page to confirm their action.
+
+### Landing Page
+- A book now button that directs the user to create a booking page. If the user has not logged in it will prompt the user to register or log in first.
+- A short introduction to describe the restaurant.
+
+### Profile Page
+- Once the user has registered a profile will be created page. The page displays a form and details for the user to change their first name, last name and telephone number and user name and email they chose when signing in.
+
+### Menu Page
+- A menu that is displayed in 3 sections by the Meals.
+
+### Home Page
+- An information section that displays the restaurant's telephone number, email address.
+- A contact form that requires the user to enter their full name, email address and a message. The form is already pre-filled with the user's full name it sendes masages to the code institute maildump  and redirects to the home page (if the user is logged in and has created a profile).
+
+### Create Booking Page
+- A form that requires the user to enter/select the booking details.
+Full name and contact telephone number are prefilled if the user has created a profile.
+The user will then need to select a date, time, number of guests and enter any allergy information if needed.
+- When clicking the make reservation button the booking will then be requested to the restaurant owner for approval.
+
+### Manage Booking Page
+- Displays all user-related bookings in a list view within a card.
+- Each card will show a booking reference, booking status, booking date, booking time, guest count. It will also contain a button to change booking details and a cancel booking button.
+
+### Edit Booking Page
+- This page will display the current booking details with a form below for the user to update any details.
+- When the changes are submitted, the booking will be processed as the booking requested status.
+
+### Cancel Booking
+- When the user clicks the cancel booking button they will be redirected to a confirmation page.
+
+<a name="technologies-used"></a>
+
+## 3. Technologies Used
+
+[Go to the top](#table-of-contents)
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML)
+    -   The project uses HyperText Markup Language.
+-   [CSS3](https://en.wikipedia.org/wiki/CSS)
+    -   The project uses Cascading Style Sheets.
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+    -   The project uses JavaScript.
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+    -   The project uses Python.
+-   [Boostrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+    -   The project uses Bootstrap 4.
+-   [PostgreSQL](https://www.postgresql.org/)
+    -   The project uses PostgreSQL as a database.
+-   [codeanywhere](https://app.codeanywhere.com/)
+    -   The project uses codeanywhere.
+-   [Google Fonts](https://fonts.google.com/)
+    -   Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
+-   [GitHub](https://github.com/)
+    -   GitHub was used to store the project's code after being pushed from Git.
+ 
+<a name="testing"></a>
+
+# 4. Testing
+
+[Go to the top](#table-of-contents)
+
+* ## Code Validation
+
+* Cafe Manbo has been validated by using online validation tools [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint JavaScript Validator](https://jshint.com/) and the [PEP8 Online Validator](http://pep8online.com/).
+
+* ### HTML Validation Image
+
+    ![HTML Validation](static/images/readme-images/html-validation-image.png)
+
+* ### CSS Validation Image
+
+    ![CSS Validation](static/images/readme-images/css-validation-image.png)
+
+* ### JSHint map.js Image
+
+    ![JavaScript Validation](static/images/readme-images/jshint-map-js-image.png)
+
+    * The JavaScript code for map.js was taken from the Code Institute Resume Project which shows students how to integrate google maps on a website.
+
+* ### JSHint nav.js Image
+
+    ![JavaScript Validation](static/images/readme-images/jshint-nav-js-image.png)
+
+* ### PEP8 Validation Image (accounts/apps.py)
+
+    <details><summary><b>PEP8 Validation Image</b></summary>
+
+    ![PEP8 Validation (accounts/apps.py)](static/images/readme-images/pep8-accounts-apps.png)
 
 
+* ## Responsiveness Testing
+    * I conducted responsive tests manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
+
+
+* ## Compressing Images
+    * All images that are displayed within the website have been compressed with [Compressor](https://compressor.io/) and I managed to save a total of 12.82 MB.<br /><br />
+
+    ![Compressed Image 1](static/images/readme-images/compressed-image-1.png)
+
+    ![Compressed Image 2](static/images/readme-images/compressed-image-2.png)
+
+* ## Automated Testing
+    * During this project I have found the benefit of automated testing to be extremely beneficial. Automated testing as highlighted many minor discrepancies that would have been missed had it not been highlighted when conducting automated testing.
+
+    * To run the automated tests, type the command - ```python manage.py test```
+
+    ![Automated Tests Image](static/images/readme-images/automated-tests-image.png)
+
+    ![Coverage Report Image](static/images/readme-images/coverage-report-image.png)
+
+
+* ## Manual Testing
+In addition to the other tests, I have conducted a manual check list for myself to carry out to make sure that everything is working as intended.
+
+
+| Status | **Main Website - User Logged Out**
+|:-------:|:--------|
+| &check; | Clicking the nav logo loads the home page
+| &check; | The nav bar is transparent on load and then the background turns dark upon scrolling 50px
+| &check; | The nav bar returns back to transparent when the user scrolls back to the top of the page
+| &check; | Clicking the Home button on the nav bar loads the home page
+| &check; | Clicking the Our Menu button on the nav bar loads the external menu PDF in a new window
+| &check; | Clicking the Gallery button on the nav bar loads the gallery page
+| &check; | Clicking the Book Now button on the nav bar loads the login page
+| &check; | Clicking the Account button on the nav bar shows the Register and Login dropdowns
+| &check; | Clicking the Register button on the nav bar drop down loads the register page
+| &check; | Clicking the Login button on the nav bar drop down loads the login page
+| &check; | Clicking the Book Now button on the hero section loads login page
+| &check; | 4 Reviews are rendered for the user to see
+| &check; | Clicking the Read More button on the a review card loads the review modal
+| &check; | Clicking the Visit Us button in the Hours & Location section loads the login page
+| &check; | Clicking the cafemanbo@hotmail.co.uk link loads an email application separately
+| &check; | Google Maps is loaded correctly and displays the correct location of Cafe Manbo
+| &check; | Clicking the Home link on the footer loads the home page
+| &check; | Clicking the Our Menu link on the footer loads the external menu PDF in a new window
+| &check; | Clicking the Gallery link on the footer loads the gallery page
+| &check; | Clicking the Book Now link on the footer loads the login page
+| &check; | Clicking the Reservations link on the footer loads the login page
+| &check; | Clicking the Register link the on footer loads the register page
+| &check; | Clicking the Login link the on footer loads the login page
+| &check; | Clicking the Instagram link on the footer loads the Instagram home page in a new window
+| &check; | Clicking the LinkedIn link on the footer loads the LinkedIn home page in a new window
+| &check; | Clicking the Twitter link on the footer loads the Twitter home page in a new window
+| &check; | Clicking the Facebook link on the footer loads the Facebook home page in a new window
+| &check; | Clicking the cafemanbo@hotmail.co.uk link on the footer loads an email application separately
+| &check; | Typing in a incorrect URL will load the 404 error page
+
+* ## Browser Compatibility
+    * The website has had manual and responsive tests conducted on the below browsers with additional Lighthouse testing on Google Chrome and Microsoft Edge and I was presented with no issues.
+        * Google Chrome
+        * Microsoft Edge
+        * Safari
+        <br /><br />
+      
+  
+  
